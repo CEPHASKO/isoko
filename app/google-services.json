@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "547372757730",
+    "firebase_url": "https://isoko-ce4c8.firebaseio.com",
+    "project_id": "isoko-ce4c8",
+    "storage_bucket": "isoko-ce4c8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:547372757730:android:490856ef8ff67a20",
+        "android_client_info": {
+          "package_name": "com.projectfirebase.soen341.soen341"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "547372757730-c3dk4giogn03tptthmj80kjlf9r62v4h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDAYAlE2tnqTyYF71cuun9Xl8J_Rls7CI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

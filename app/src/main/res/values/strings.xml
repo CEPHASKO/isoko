@@ -1,0 +1,88 @@
+<resources>
+    <!-- About -->
+    <string name="app_name">Lemon-Aide</string>
+    <string name="slogan">Selling made lemon squeezy.</string>
+    <string name="about_project">An Android Application Project by Group C.</string>
+    <string name="about_school">SOEN 341, Concordia University</string>
+    <string name="repo_link">Project Repository: <a href="https://github.com/davidberard2/SOEN341GROUPC">GitHub</a></string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="title_activity_login">Sign in</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_up">Sign up</string>
+    <string name="action_sign_in_short">Log in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email completion."</string>
+    <string name="logged_out">"You are currently not logged in. \n Please log in or sign up for to see this page.</string>
+
+    <!-- Strings related to fragment buttons -->
+    <string name="home_button">Home</string>
+    <string name="profile_button">Profile</string>
+    <string name="settings_button">Settings</string>
+    <string name="search_button">Search</string>
+    <string name="favorite_button">Favorites</string>
+
+    <!-- Search Options -->
+    <string name="action_search">search</string>
+    <string name="search_string">What would you like to search for?</string>
+    <string name="search_minprice">Minimum Price</string>
+    <string name="search_maxprice">Maximum Price</string>
+    <string name="search_choose_categories">Choose a category to search for</string>
+    <string name="search_choose_subCategories">Choose a sub-category to search for</string>
+    <string-array name="categoryOptions">
+        <item>Electronics</item>
+        <item>Vehicles</item>
+        <item>Food</item>
+        <item>Clothes</item>
+    </string-array>
+    <string-array name="subCategoryOptions">
+        <item>Phone</item>
+        <item>Nissan</item>
+        <item>Ugali</item>
+        <item>Trouser</item>
+    </string-array>
+
+    <!-- Item details -->
+    <string name="item_name">Name</string>
+    <string name="item_price">Price</string>
+    <string name="item_photo">Item photo</string>
+    <string name="additional_info">Additional information</string>
+    <string name="item_desc">Item description</string>
+    <string name="contact_seller">Contact seller</string>
+    <string name="seller_name">Seller name</string>
+    <string name="seller_email">Seller email</string>
+
+    <!-- Profile details -->
+    <string name="profile_first_name">First Name</string>
+    <string name="profile_last_name">Last Name</string>
+    <string name="profile_email">Email</string>
+    <string name="profile_phone_number">Phone Number</string>
+    <string name="profile_postal_code">Postal Code</string>
+    <string name="profile_photo">Profile photo</string>
+    <string name="profile_update_photo">Update profile photo</string>
+
+    <!-- Profile menu options -->
+    <string name="profile_edit">Profile Edit</string>
+    <string name="profile_save">Profile Save</string>
+    <string name="profile_edit_cancel">Profile Edit Cancel</string>
+    <string name="profile_settings">Profile Settings</string>
+
+    <!-- Add item details -->
+    <string name="what_would_you_like_to_sell">What would you like to sell?</string>
+    <string name="name_of_item">Name of item</string>
+    <string name="price">Price</string>
+    <string name="description_of_the_object">Description of the object</string>
+    <string name="post_my_item">Post my item</string>
+    <string name="choose_from_gallery">Choose From Gallery</string>
+    <string name="take_a_photo">Take A photo</string>
+    <string name="add_choose_categories">Choose a category</string>
+    <string name="add_choose_subCategories">Choose a sub-category</string>
+  
+    <!-- Favorite details -->
+    <string name="no_favorites">You have no favorites!</string>
+</resources>
