@@ -23,6 +23,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -100,7 +101,7 @@ public class AddItemFragment extends Fragment {
         databaseItems = rootRef.child("Items");
         categoriesRef = rootRef.child("Categories");
 
-        mStorage = FirebaseStorage.getInstance().getReference();
+         mStorage = FirebaseStorage.getInstance().getReference().child("ItemPictures");
 
         itemNameET = view.findViewById(R.id.item_name);
         itemPriceET = view.findViewById(R.id.item_price);
@@ -286,7 +287,6 @@ public class AddItemFragment extends Fragment {
         mProgressDialog.setMessage("Uploading ...");
         mProgressDialog.show();
 
-
         Uri uri = data.getData();
         StorageReference filePath = mStorage.child("ItemPictures").child(uniqueItemID + "---" + uri.getLastPathSegment());
 
@@ -295,7 +295,7 @@ public class AddItemFragment extends Fragment {
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                 Toast.makeText(getContext(), "Photo Upload Done", Toast.LENGTH_LONG).show();
                 mProgressDialog.dismiss();
-                imageURL =mStorage.getDownloadUrl().toString();
+                imageURL = taskSnapshot.getStorage().getDownloadUrl().toString();
             }
         });
     }
