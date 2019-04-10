@@ -5,7 +5,7 @@ import com.google.firebase.database.PropertyName;
 
 public class Listing {
     private String ID;
-    private String UserId;
+    private String sellerId;
     private String Name;
     private double Price;
     private String ImageURL;
@@ -14,7 +14,7 @@ public class Listing {
 
     public Listing(){
         this.ID = "";
-        this.UserId = "";
+        this.sellerId = "";
         this.Name = "";
         this.Price = 0;
         this.ImageURL = "";
@@ -22,9 +22,9 @@ public class Listing {
         this.SubCategory = 0;
     }
 
-    public Listing(String id, String UserId){
+    public Listing(String id, String sellerId){
         this.ID = id;
-        this.UserId = UserId;
+        this.sellerId = sellerId;
     }
 
     public Listing(String id, String name, double price, String imageURL) {
@@ -49,8 +49,8 @@ public class Listing {
     }
 
     @PropertyName("OwnerID")
-    public String getUserId() {
-        return UserId;
+    public String getsellerId() {
+        return sellerId;
     }
 
     @PropertyName("Name")

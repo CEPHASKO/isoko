@@ -13,27 +13,20 @@
           "package_name": "com.projectfirebase.soen341.soen341"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "547372757730-c3dk4giogn03tptthmj80kjlf9r62v4h.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
           "current_key": "AIzaSyDDAYAlE2tnqTyYF71cuun9Xl8J_Rls7CI"
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
-        },
-        "ads_service": {
-          "status": 2
+          "other_platform_oauth_client": [
+            {
+              "client_id": "547372757730-c3dk4giogn03tptthmj80kjlf9r62v4h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

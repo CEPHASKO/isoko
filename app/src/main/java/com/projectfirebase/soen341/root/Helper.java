@@ -1,6 +1,5 @@
 package com.projectfirebase.soen341.root;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.view.View;
 import android.widget.EditText;
@@ -13,14 +12,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 import Tasks.DownloadImageTask;
 
 import static android.R.attr.fragment;
 
 public class Helper {
-    public static boolean isNullOrEmpty(String s){ return s == null || s.trim().equals(""); }
+    public static boolean isNullOrEmpty(String s){ return s == null || s.trim() == ""; }
     public static boolean isNullOrEmpty(Object[] o) { return o == null || o.length < 1; }
 
     public static void setImage(View view, String URL, ImageView imageView){
@@ -55,18 +53,15 @@ public class Helper {
 
     public static String[] getCategoryArrayFromSnapshot(DataSnapshot dataSnapshot, String firstOption){
         List<Object> subCategoriesList = (ArrayList<Object>) dataSnapshot.getValue();
-        @SuppressLint("UseSparseArrays") Map<Integer, String> categories = new HashMap<>();
-        if (subCategoriesList != null) {
-            for ( Object category :(subCategoriesList)) {
-                int index = subCategoriesList.indexOf(category);
-                //itemMap is a single item, but still in json format.
-                //From this object, extract wanted data to item, and add it to our list of items.
-                if(category instanceof Map){
-                    Map<String, Object> categoryObj = (Map<String, Object>) category;
 
-                    String name = (String) categoryObj.get("Name");
-                    categories.put( index, Objects.requireNonNull(name));
-                }
+        Map<Integer, String> categories = new HashMap<>();
+        for ( Object category : subCategoriesList ) {
+            int index = subCategoriesList.indexOf(category);
+            if(category instanceof Map){
+                Map<String, Object> categoryObj = (Map<String, Object>) category;
+
+                String name = (String) categoryObj.get("Name");
+                categories.put( index, name);
             }
         }
 
@@ -83,4 +78,3 @@ public class Helper {
         return options;
     }
 }
-

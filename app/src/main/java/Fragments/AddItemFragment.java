@@ -71,7 +71,7 @@ public class AddItemFragment extends Fragment {
     private boolean justCreatedFlagSC;
 
     private boolean isItemPostable;
-    private String imageURL;
+    private String uploadURL;
     private final String uniqueItemID = UUID.randomUUID().toString();
 
     private ProgressDialog mProgressDialog;
@@ -101,7 +101,7 @@ public class AddItemFragment extends Fragment {
         databaseItems = rootRef.child("Items");
         categoriesRef = rootRef.child("Categories");
 
-         mStorage = FirebaseStorage.getInstance().getReference().child("ItemPictures");
+         mStorage = FirebaseStorage.getInstance().getReference();
 
         itemNameET = view.findViewById(R.id.item_name);
         itemPriceET = view.findViewById(R.id.item_price);
@@ -120,7 +120,7 @@ public class AddItemFragment extends Fragment {
         categoriesRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                categoryOptions = Helper.getCategoryArrayFromSnapshot(dataSnapshot, "categoryOptions.");
+             //   categoryOptions = Helper.getCategoryArrayFromSnapshot(dataSnapshot, "categoryOptions.");
 
                 ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, new String[] {"Electronics","Vehicles","Clothing","Stationery"});
 
@@ -246,7 +246,7 @@ public class AddItemFragment extends Fragment {
                     builder1.setMessage("Please choose a sub-category!");
                     AlertDialog alert11 = builder1.create();
                     alert11.show();
-                } else if(Helper.isNullOrEmpty(imageURL)){
+                } else if(Helper.isNullOrEmpty(uploadURL)){
                     builder1.setMessage("Please upload an image!");
                     AlertDialog alert11 = builder1.create();
                     alert11.show();
@@ -260,7 +260,7 @@ public class AddItemFragment extends Fragment {
                     itemPrice = Math.round(itemPrice * 100)/100.0;
                     String itemDescription = itemDescriptionET.getText().toString();
 
-                    ItemDescription listingItem = new ItemDescription(uniqueItemID, user.getUid(), itemName, itemPrice, imageURL, itemDescription, selectedCategory, selectedSubCategory);
+                    ItemDescription listingItem = new ItemDescription(uniqueItemID, user.getUid(), itemName, itemPrice, uploadURL, itemDescription, selectedCategory, selectedSubCategory);
 
                     databaseItems.child(uniqueItemID).setValue(listingItem);
 
@@ -295,7 +295,7 @@ public class AddItemFragment extends Fragment {
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                 Toast.makeText(getContext(), "Photo Upload Done", Toast.LENGTH_LONG).show();
                 mProgressDialog.dismiss();
-                imageURL = taskSnapshot.getStorage().getDownloadUrl().toString();
+                uploadURL = taskSnapshot.getStorage().getDownloadUrl().toString();
             }
         });
     }

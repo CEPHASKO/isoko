@@ -200,7 +200,6 @@ public class ProfileFragment extends Fragment {
         postalCode_et.setText(postalCode);
     }
 
-    // Not currently used
     private void updatePhoto() {
 
         UserProfileChangeRequest updatePhoto = new UserProfileChangeRequest.Builder()
@@ -229,7 +228,6 @@ public class ProfileFragment extends Fragment {
         }
     }
 
-    // TODO: Only Gmail updates go through, possibly fix?
     private void updateEmail() {
         if (Helper.isNullOrEmpty(email_et.getText().toString().trim())) {
             Toast.makeText(view.getContext(), "Email is invalid", Toast.LENGTH_SHORT).show();
@@ -250,7 +248,6 @@ public class ProfileFragment extends Fragment {
         }
     }
 
-    // Do we want to allow people to remove their phone numbers?
     private void updatePhoneNumber() {
         if (!phoneNumber_et.getText().toString().trim().equals(phoneNumber)) {
             phoneNumber = phoneNumber_et.getText().toString().trim();
@@ -258,7 +255,6 @@ public class ProfileFragment extends Fragment {
         }
     }
 
-    // Do we want to allow people to remove their postal codes?
     private void updatePostalCode() {
         if (!postalCode_et.getText().toString().trim().equals(postalCode)) {
             postalCode = postalCode_et.getText().toString().trim();
@@ -282,10 +278,6 @@ public class ProfileFragment extends Fragment {
                 int columnIndex = cursor.getColumnIndex(FILE[0]);
                 String imageDecode = cursor.getString(columnIndex);
                 cursor.close();
-
-               /* photo_iv.setImageBitmap(BitmapFactory
-                        .decodeFile(ImageDecode));*/
-                // Toast.makeText(getActivity(), ImageDecode, Toast.LENGTH_LONG).show();
 
                 Uri file = Uri.fromFile(new File(imageDecode));
                 StorageReference riversRef = profilePictureRef.child(user.getUid());
@@ -358,12 +350,6 @@ public class ProfileFragment extends Fragment {
                     postalCode_et.setVisibility(View.VISIBLE);
 
                     updatePhoto_ib.setVisibility(View.VISIBLE);
-                    /*updatePhoto_ib.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            updatePhoto();
-                        }
-                    });*/
 
                     // SET Data Listener
                     myUID = myUser.child(authRef.getCurrentUser().getUid());

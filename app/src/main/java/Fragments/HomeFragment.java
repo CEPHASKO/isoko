@@ -188,7 +188,6 @@ public class HomeFragment extends Fragment {
 
     @Override
     public void onAttach(Activity activity) {
-        // TODO Auto-generated method stub
         super.onAttach(activity);
     }
 }

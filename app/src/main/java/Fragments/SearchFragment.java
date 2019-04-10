@@ -81,7 +81,7 @@ public class SearchFragment extends Fragment {
         categoriesRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                categoryOptions = Helper.getCategoryArrayFromSnapshot(dataSnapshot, "categoryOptions.");
+               // categoryOptions = Helper.getCategoryArrayFromSnapshot(dataSnapshot, "categoryOptions.");
 
                 ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, new String[] {"Electronics","Vehicles","Clothing","Stationery"});
 
